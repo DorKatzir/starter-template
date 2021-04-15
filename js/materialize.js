@@ -5438,7 +5438,7 @@ $jscomp.polyfill = function (e, r, p, m) {
   'use strict';
 
   var _defaults = {
-    edge: 'left',
+    edge: 'right',
     draggable: true,
     inDuration: 250,
     outDuration: 200,
@@ -5473,7 +5473,7 @@ $jscomp.polyfill = function (e, r, p, m) {
       /**
        * Options for the Sidenav
        * @member Sidenav#options
-       * @prop {String} [edge='left'] - Side of screen on which Sidenav appears
+       * @prop {String} [edge='right'] - Side of screen on which Sidenav appears
        * @prop {Boolean} [draggable=true] - Allow swipe gestures to open/close Sidenav
        * @prop {Number} [inDuration=250] - Length in ms of enter transition
        * @prop {Number} [outDuration=200] - Length in ms of exit transition
@@ -5695,9 +5695,9 @@ $jscomp.polyfill = function (e, r, p, m) {
          * Invert values if Sidenav is right edge
          */
         var transformX = totalDeltaX;
-        var transformPrefix = 'translateX(-100%)';
+        var transformPrefix = 'translateX(100%)';
         if (this.options.edge === 'right') {
-          transformPrefix = 'translateX(100%)';
+          transformPrefix = 'translateX(-100%)';
           transformX = -transformX;
         }
 
